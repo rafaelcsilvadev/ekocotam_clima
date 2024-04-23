@@ -69,7 +69,7 @@ class _WeatherViewState extends State<WeatherView> {
           ),
           Container(
             margin: const EdgeInsets.only(top: 30),
-            width: size.width * 0.8,
+            width: size.width * 0.9,
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -339,7 +339,7 @@ class _WeatherViewState extends State<WeatherView> {
           Container(
             margin: const EdgeInsets.only(top: 30),
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            width: size.width * 0.8,
+            width: size.width * 0.9,
             height: 90,
             decoration: BoxDecoration(
               color: AppColors.shadowColor,
