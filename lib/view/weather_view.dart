@@ -1,6 +1,13 @@
 import 'package:ekocotam_clima/assets/icon/app_icons.dart';
+import 'package:ekocotam_clima/routes/app_routes.dart';
 import 'package:ekocotam_clima/theme/app_color.dart';
 import 'package:ekocotam_clima/widgets/layout.dart';
+import 'package:ekocotam_clima/widgets/menu_bar_app.dart';
+import 'package:ekocotam_clima/widgets/menu_bar_options.dart';
+import 'package:ekocotam_clima/widgets/search.dart';
+import 'package:ekocotam_clima/widgets/temperature.dart';
+import 'package:ekocotam_clima/widgets/weather_day.dart';
+import 'package:ekocotam_clima/widgets/weather_symbol.dart';
 import 'package:flutter/material.dart';
 
 class WeatherView extends StatefulWidget {
@@ -11,7 +18,6 @@ class WeatherView extends StatefulWidget {
 }
 
 class _WeatherViewState extends State<WeatherView> {
-  final TextEditingController _searchController = TextEditingController();
   DateTime currentDateTime = DateTime.now();
 
   isDay() {
@@ -21,7 +27,6 @@ class _WeatherViewState extends State<WeatherView> {
   @override
   void initState() {
     super.initState();
-    _searchController.text = 'Morro do Gama';
   }
 
   @override
@@ -37,423 +42,64 @@ class _WeatherViewState extends State<WeatherView> {
       backgroundColor: AppColors.primaryColor,
       child: Column(
         children: [
-          TextFormField(
-            controller: _searchController,
-            cursorColor: AppColors.textColor,
-            style: TextStyle(
-                color: AppColors.textColor, fontFamily: 'Inter', fontSize: 18),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              prefixIcon: Icon(
-                Icons.search,
-                color: AppColors.textColor,
-              ),
+          Search(),
+          WeatherSymbol(symbol: AppIcons.sunny),
+          Container(
+            margin: EdgeInsets.only(top: size.height * 0.002),
+            child: Temperature(
+              temperature: 29,
+              currentDay: 'Sábado',
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 20),
-            width: 250,
-            height: 250,
-            child: Image.asset(AppIcons.sunny),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 30),
-            child: Text(
-              '29\u00B0',
-              style: TextStyle(
-                color: AppColors.textColor,
-                fontSize: 50,
-                fontFamily: 'Inter Bold',
-              ),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 30),
-            width: size.width * 0.9,
+            margin: EdgeInsets.only(top: size.height * 0.08),
             child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'DOM',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'SEG',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'TER',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'QUA',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'QUI',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'SEX',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 170,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      color: AppColors.shadowColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Text(
-                            'SAB',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 24),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 15),
-                          child: Image.asset(AppIcons.rainCloud),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            '20\u00B0',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                color: AppColors.textColor,
-                                fontSize: 20),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  WeatherDay(day: 'Dom', symbol: AppIcons.rainCloud, temperature: 29),
+                  WeatherDay(day: 'Seg', symbol: AppIcons.rainCloud, temperature: 29),
+                  WeatherDay(day: 'Ter', symbol: AppIcons.rainCloud, temperature: 29),
+                  WeatherDay(day: 'Qua', symbol: AppIcons.rainCloud, temperature: 29),
+                  WeatherDay(day: 'Qui', symbol: AppIcons.rainCloud, temperature: 29),
                 ],
               ),
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 30),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            width: size.width * 0.9,
-            height: 90,
-            decoration: BoxDecoration(
-              color: AppColors.shadowColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.home,
-                        size: 32,
-                        color: AppColors.textColor,
-                      ),
-                      Text(
-                        'Home',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'Inter Bold',
-                          color: AppColors.textColor,
-                        ),
-                      )
-                    ],
-                  ),
+            margin: EdgeInsets.only(top: size.height * 0.05),
+            child: MenuBarApp(
+              options: [
+                MenuBarOptions(
+                  isCurrentPage: currentRoutes == Routes.weather,
+                  icon: Icons.home,
+                  name: 'Home',
+                  onPress: () => {},
                 ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.local_hospital_outlined,
-                        size: 32,
-                        color: AppColors.secondaryColor,
-                      ),
-                      Text(
-                        'Saúde',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'Inter',
-                          color: AppColors.secondaryColor,
-                        ),
-                      )
-                    ],
-                  ),
+                MenuBarOptions(
+                  icon: Icons.local_hospital_outlined,
+                  name: 'Saúde',
+                  onPress: () => {},
                 ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.lightbulb_outline,
-                        size: 32,
-                        color: AppColors.secondaryColor,
-                      ),
-                      Text(
-                        'Dicas',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'Inter',
-                          color: AppColors.secondaryColor,
-                        ),
-                      )
-                    ],
-                  ),
+                MenuBarOptions(
+                  icon: Icons.lightbulb_outline,
+                  name: 'Dicas',
+                  onPress: () => {},
                 ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.recycling_outlined,
-                        size: 32,
-                        color: AppColors.secondaryColor,
-                      ),
-                      Text(
-                        'Lixeira',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'Inter',
-                          color: AppColors.secondaryColor,
-                        ),
-                      )
-                    ],
-                  ),
+                MenuBarOptions(
+                  icon: Icons.recycling_outlined,
+                  name: 'Lixeira',
+                  onPress: () => {},
                 ),
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.public_outlined,
-                        size: 32,
-                        color: AppColors.secondaryColor,
-                      ),
-                      Text(
-                        'Redes',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontFamily: 'Inter',
-                            color: AppColors.secondaryColor),
-                      )
-                    ],
-                  ),
+                MenuBarOptions(
+                  icon: Icons.public_outlined,
+                  name: 'Redes',
+                  onPress: () => {},
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
