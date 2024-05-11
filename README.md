@@ -1,3 +1,4 @@
+## 1.2.1+3 Build APK
 ## 1.2.1+2 Feitos ajustes no Flexible das telas
 ## 1.2.0+2 Criado tela de lixeira
 ## 1.1.0+2 Criado telas de dicas, cursos e fatos
