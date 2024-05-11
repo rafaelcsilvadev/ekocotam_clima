@@ -25,7 +25,8 @@ class TrashView extends StatelessWidget {
         width: size.width,
         height: size.height,
         margin: const EdgeInsets.only(top: 20),
-        child: Column(
+        child: Flex(
+          direction: Axis.vertical,
           children: [
             Flexible(
               flex: 1,
@@ -41,11 +42,11 @@ class TrashView extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: size.height * 0.7,
-              child: SingleChildScrollView(
-                child: Flexible(
-                  flex: 4,
+            Flexible(
+              flex: 4,
+              child: SizedBox(
+                height: size.height * 0.7,
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
                       Container(

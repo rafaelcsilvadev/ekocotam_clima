@@ -23,7 +23,8 @@ class TipView extends StatelessWidget {
         width: size.width,
         height: size.height,
         margin: const EdgeInsets.only(top: 20),
-        child: Column(
+        child: Flex(
+          direction: Axis.vertical,
           children: [
             Flexible(
               flex: 1,
@@ -39,11 +40,11 @@ class TipView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: size.height * 0.7,
-              child: const SingleChildScrollView(
-                child: Flexible(
-                  flex: 4,
+            Flexible(
+              flex: 4,
+              child: Container(
+                height: size.height * 0.7,
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
                       ContentButton(
