@@ -89,7 +89,7 @@ class _WeatherViewState extends State<WeatherView> {
                 MenuBarOptions(
                   icon: Icons.recycling_outlined,
                   name: 'Lixeira',
-                  onPress: () => {},
+                  onPress: () => Navigator.pushNamed(context, Routes.trash),
                 ),
                 MenuBarOptions(
                   icon: Icons.public_outlined,

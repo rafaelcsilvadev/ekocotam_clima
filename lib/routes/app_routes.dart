@@ -3,4 +3,5 @@ abstract class Routes {
   static const tip = '/tip';
   static const course = '/course';
   static const facts = '/fatos';
+  static const trash = '/trash';
 }
