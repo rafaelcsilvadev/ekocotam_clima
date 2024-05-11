@@ -32,7 +32,6 @@ class _WeatherViewState extends State<WeatherView> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    String currentRoutes = ModalRoute.of(context)?.settings.name ?? '';
 
     return Layout(
       statusBarColor: AppColors.primaryColor,
@@ -42,18 +41,18 @@ class _WeatherViewState extends State<WeatherView> {
       backgroundColor: AppColors.primaryColor,
       child: Column(
         children: [
-          Search(),
-          WeatherSymbol(symbol: AppIcons.sunny),
+          const Search(),
+          const WeatherSymbol(symbol: AppIcons.sunny),
           Container(
             margin: EdgeInsets.only(top: size.height * 0.002),
-            child: Temperature(
+            child: const Temperature(
               temperature: 29,
               currentDay: 'Sábado',
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: size.height * 0.08),
-            child: SingleChildScrollView(
+            child: const SingleChildScrollView(
               padding: EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -72,7 +71,7 @@ class _WeatherViewState extends State<WeatherView> {
             child: MenuBarApp(
               options: [
                 MenuBarOptions(
-                  isCurrentPage: currentRoutes == Routes.weather,
+                  isCurrentPage: true,
                   icon: Icons.home,
                   name: 'Home',
                   onPress: () => {},
@@ -85,7 +84,7 @@ class _WeatherViewState extends State<WeatherView> {
                 MenuBarOptions(
                   icon: Icons.lightbulb_outline,
                   name: 'Dicas',
-                  onPress: () => {},
+                  onPress: () => Navigator.pushNamed(context, Routes.tip),
                 ),
                 MenuBarOptions(
                   icon: Icons.recycling_outlined,
