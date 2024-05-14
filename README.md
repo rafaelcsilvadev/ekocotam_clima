@@ -5,7 +5,8 @@
 <span>Tecnologias: </span>
 
 <ul>
-  <li>Flutter</li>
+  <li>Arquitetura MVVM</li>
   <li>Dart</li>
+  <li>Flutter</li>
   <li>GetX</li> 
 </ul>
