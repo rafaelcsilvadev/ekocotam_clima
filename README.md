@@ -1,6 +1,10 @@
-# Ekocotam Clima
-
 <h1>Ekocotem</h1>
+
+<span>
+  <b>Status: </b>
+  concluído 🏁
+</span>
+<br><br/>
 
 <span>Tecnologias: </span>
 
