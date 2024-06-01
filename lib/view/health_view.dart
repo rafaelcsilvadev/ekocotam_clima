@@ -7,8 +7,8 @@ import 'package:ekocotam_clima/widgets/menu_bar_app.dart';
 import 'package:ekocotam_clima/widgets/menu_bar_options.dart';
 import 'package:flutter/material.dart';
 
-class TipView extends StatelessWidget {
-  const TipView({super.key});
+class HealthView extends StatelessWidget {
+  const HealthView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class TipView extends StatelessWidget {
               flex: 1,
               child: Container(
                 child: Text(
-                  'DICAS',
+                  'SAÚDE',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 35,
@@ -49,18 +49,20 @@ class TipView extends StatelessWidget {
                   child: Column(
                     children: [
                       ContentButton(
-                        onPress: () => Navigator.pushNamed(context, Routes.tab, arguments: Texts.tip3),
-                        text:
-                        'Como mitigar os efeitos das mudanças climáticas?',
+                        onPress: () => Navigator.pushNamed(context, Routes.tab, arguments: Texts.health1),
+                        text: 'O clima afeta a saúde física?',
                       ),
                       ContentButton(
-                        onPress: () => Navigator.pushNamed(context, Routes.tab, arguments: Texts.tip2),
-                        text: 'Como funciona o clima?',
+                        onPress: () => Navigator.pushNamed(context, Routes.tab, arguments: Texts.health2),
+                        text: 'Como as mudanças climáticas afetam a saúde?',
                       ),
                       ContentButton(
-                        onPress: () => Navigator.pushNamed(context, Routes.tab, arguments: Texts.tip1),
-                        text: 'Quais fatores acontecem por conta do clima?',
                         hasBorderButton: true,
+                        onPress: () => Navigator.pushNamed(context, Routes.tab, arguments: Texts.health3),
+                        text: 'Quais são os impactos das '
+                            'mudanças climáticas na '
+                            'biodiversidade e na saúde '
+                            'humana?',
                       ),
                     ],
                   ),
@@ -80,15 +82,15 @@ class TipView extends StatelessWidget {
                           Navigator.pushNamed(context, Routes.weather),
                     ),
                     MenuBarOptions(
+                      isCurrentPage: true,
                       icon: Icons.article,
                       name: 'Cursos',
-                      onPress: () => Navigator.pushNamed(context, Routes.course),
+                      onPress: () => {},
                     ),
                     MenuBarOptions(
-                      isCurrentPage: true,
                       icon: Icons.lightbulb_outline,
                       name: 'Dicas',
-                      onPress: () => {},
+                      onPress: () => Navigator.pushNamed(context, Routes.tip),
                     ),
                     MenuBarOptions(
                       icon: Icons.recycling_outlined,

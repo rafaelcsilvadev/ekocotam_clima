@@ -1,11 +1,9 @@
 import 'package:ekocotam_clima/assets/images/app_images.dart';
 import 'package:ekocotam_clima/routes/app_routes.dart';
 import 'package:ekocotam_clima/theme/app_color.dart';
-import 'package:ekocotam_clima/widgets/content_button.dart';
 import 'package:ekocotam_clima/widgets/layout.dart';
 import 'package:ekocotam_clima/widgets/menu_bar_app.dart';
 import 'package:ekocotam_clima/widgets/menu_bar_options.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TrashView extends StatelessWidget {

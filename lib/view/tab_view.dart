@@ -12,7 +12,8 @@ class TabView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    final args = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    final args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
 
     return Layout(
       statusBarColor: AppColors.primaryColor,
@@ -27,16 +28,31 @@ class TabView extends StatelessWidget {
         child: Flex(
           direction: Axis.vertical,
           children: [
+            Container(
+              alignment: Alignment.topLeft,
+              width: size.width,
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              child: IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: Icon(Icons.chevron_left, color: AppColors.textColor,),
+              ),
+            ),
             Flexible(
               flex: 1,
-              child: Container(
-                child: Text(
-                  args['title']!,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: AppColors.textColor,
-                    fontFamily: 'Inter Bold',
+              child: SizedBox(
+                height: size.height * 0.2,
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: EdgeInsets.all(2),
+                    child: Text(
+                      args['title']!,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 35,
+                        color: AppColors.textColor,
+                        fontFamily: 'Inter Bold',
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -59,7 +75,8 @@ class TabView extends StatelessWidget {
                           children: [
                             Container(
                               width: size.width,
-                              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 10),
                               child: Text(
                                 args['text']!,
                                 softWrap: true,

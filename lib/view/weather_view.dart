@@ -26,6 +26,7 @@ class _WeatherViewState extends State<WeatherView> {
 
   @override
   void initState() {
+    isDay();
     super.initState();
   }
 
@@ -79,7 +80,7 @@ class _WeatherViewState extends State<WeatherView> {
                 MenuBarOptions(
                   icon: Icons.local_hospital_outlined,
                   name: 'Saúde',
-                  onPress: () => {},
+                  onPress: () => Navigator.pushNamed(context, Routes.health),
                 ),
                 MenuBarOptions(
                   icon: Icons.lightbulb_outline,
@@ -94,7 +95,7 @@ class _WeatherViewState extends State<WeatherView> {
                 MenuBarOptions(
                   icon: Icons.public_outlined,
                   name: 'Redes',
-                  onPress: () => {},
+                  onPress: () => Navigator.pushNamed(context, Routes.network),
                 ),
               ],
             ),

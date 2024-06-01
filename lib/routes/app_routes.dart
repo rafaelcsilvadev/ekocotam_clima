@@ -5,4 +5,6 @@ abstract class Routes {
   static const facts = '/fatos';
   static const trash = '/trash';
   static const tab = '/tab';
+  static const health = '/health';
+  static const network = '/network';
 }
