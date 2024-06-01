@@ -1,3 +1,4 @@
+import 'package:ekocotam_clima/config/texts.dart';
 import 'package:ekocotam_clima/routes/app_routes.dart';
 import 'package:ekocotam_clima/theme/app_color.dart';
 import 'package:ekocotam_clima/widgets/content_button.dart';
@@ -48,13 +49,16 @@ class FactsView extends StatelessWidget {
                   child: Column(
                     children: [
                       ContentButton(
+                        onPress: () => Navigator.popAndPushNamed(context, Routes.tab, arguments: Texts.facts1),
                         text:
                         'Como acontece o aquecimento global?',
                       ),
                       ContentButton(
+                        onPress: () => Navigator.popAndPushNamed(context, Routes.tab, arguments: Texts.facts3),
                         text: 'O que é efeito estufa?',
                       ),
                       ContentButton(
+                        onPress: () => Navigator.popAndPushNamed(context, Routes.tab, arguments: Texts.facts2),
                         text: 'O que são eventos climáticos?',
                         hasBorderButton: true,
                       ),

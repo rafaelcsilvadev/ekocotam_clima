@@ -80,23 +80,23 @@ class TrashView extends StatelessWidget {
                               width: size.width,
                               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                               child: Text(
-                                'O descarte inadequado de lixo'
-                                'contribui para o aquecimento global'
-                                'e ameaça a vida marinha. A'
-                                'decomposição orgânica em aterros'
-                                'produz metano, um gás de efeito'
-                                'estufa, enquanto a incineração'
-                                'libera dióxido de carbono. Resíduos'
-                                'plásticos nos oceanos representam'
+                                'O descarte inadequado de lixo '
+                                'contribui para o aquecimento global '
+                                'e ameaça a vida marinha. A '
+                                'decomposição orgânica em aterros '
+                                'produz metano, um gás de efeito '
+                                'estufa, enquanto a incineração '
+                                'libera dióxido de carbono. Resíduos '
+                                'plásticos nos oceanos representam '
                                 'perigo para animais marinhos,'
-                                'levando à morte por sufocamento ou'
-                                'ingestão. Substâncias tóxicas no lixo'
-                                'podem contaminar habitats,'
-                                'prejudicando a reprodução e a saúde'
-                                'dos animais. É essencial adotar'
-                                'práticas de gestão de resíduos mais'
-                                'sustentáveis para mitigar esses'
-                                'impactos negativos.',
+                                'levando à morte por sufocamento ou '
+                                'ingestão. Substâncias tóxicas no lixo '
+                                'podem contaminar habitats, '
+                                'prejudicando a reprodução e a saúde '
+                                'dos animais. É essencial adotar '
+                                'práticas de gestão de resíduos mais '
+                                'sustentáveis para mitigar esses '
+                                'impactos negativos. ',
                                 softWrap: true,
                                 maxLines: 20,
                                 style: TextStyle(

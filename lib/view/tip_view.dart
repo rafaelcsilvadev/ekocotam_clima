@@ -1,3 +1,4 @@
+import 'package:ekocotam_clima/config/texts.dart';
 import 'package:ekocotam_clima/routes/app_routes.dart';
 import 'package:ekocotam_clima/theme/app_color.dart';
 import 'package:ekocotam_clima/widgets/content_button.dart';
@@ -48,13 +49,16 @@ class TipView extends StatelessWidget {
                   child: Column(
                     children: [
                       ContentButton(
+                        onPress: () => Navigator.popAndPushNamed(context, Routes.tab, arguments: Texts.tip3),
                         text:
                         'Como mitigar os efeitos das mudanças climáticas?',
                       ),
                       ContentButton(
+                        onPress: () => Navigator.popAndPushNamed(context, Routes.tab, arguments: Texts.tip2),
                         text: 'Como funciona o clima?',
                       ),
                       ContentButton(
+                        onPress: () => Navigator.popAndPushNamed(context, Routes.tab, arguments: Texts.tip1),
                         text: 'Quais fatores acontecem por conta do clima?',
                         hasBorderButton: true,
                       ),

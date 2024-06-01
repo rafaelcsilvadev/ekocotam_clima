@@ -1,5 +1,6 @@
 import 'package:ekocotam_clima/view/course_view.dart';
 import 'package:ekocotam_clima/view/facts_view.dart';
+import 'package:ekocotam_clima/view/tab_view.dart';
 import 'package:ekocotam_clima/view/tip_view.dart';
 import 'package:ekocotam_clima/view/trash_view.dart';
 import 'package:ekocotam_clima/view/weather_view.dart';
@@ -28,6 +29,10 @@ class AppPages {
     GetPage(
       name: Routes.trash,
       page: () => const TrashView(),
+    ),
+    GetPage(
+      name: Routes.tab,
+      page: () => const TabView(),
     ),
   ];
 }

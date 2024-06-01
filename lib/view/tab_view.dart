@@ -1,17 +1,18 @@
 import 'package:ekocotam_clima/routes/app_routes.dart';
 import 'package:ekocotam_clima/theme/app_color.dart';
-import 'package:ekocotam_clima/widgets/content_button.dart';
 import 'package:ekocotam_clima/widgets/layout.dart';
 import 'package:ekocotam_clima/widgets/menu_bar_app.dart';
 import 'package:ekocotam_clima/widgets/menu_bar_options.dart';
 import 'package:flutter/material.dart';
 
-class CourseView extends StatelessWidget {
-  const CourseView({super.key});
+class TabView extends StatelessWidget {
+  const TabView({super.key});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+    final args = ModalRoute.of(context)!.settings.arguments as Map<String, String>;
 
     return Layout(
       statusBarColor: AppColors.primaryColor,
@@ -30,7 +31,7 @@ class CourseView extends StatelessWidget {
               flex: 1,
               child: Container(
                 child: Text(
-                  'CURSOS',
+                  args['title']!,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 35,
@@ -41,29 +42,37 @@ class CourseView extends StatelessWidget {
               ),
             ),
             Flexible(
-              flex: 4,
-              child: Container(
+              flex: 2,
+              child: SizedBox(
                 height: size.height * 0.7,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      ContentButton(
-                        onPress: () => {},
-                        text:
-                        'Saúde urbana e clima',
-                      ),
-                      ContentButton(
-                        onPress: () => {},
-                        text: 'Mudanças climáticas',
-                      ),
-                      ContentButton(
-                        onPress: () => {},
-                        text: 'Mudanças do clima e Gestão do Risco Climático',
-                      ),
-                      ContentButton(
-                        onPress: () => {},
-                        text: 'Impactos da Mudança do Clima para a Gestão Municipal',
-                        hasBorderButton: true,
+                      Container(
+                        decoration: BoxDecoration(
+                          border: BorderDirectional(
+                            top: BorderSide(
+                                color: AppColors.secondaryColor, width: 2),
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: size.width,
+                              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                              child: Text(
+                                args['text']!,
+                                softWrap: true,
+                                maxLines: 20,
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  fontSize: 15,
+                                  color: AppColors.textColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -83,10 +92,10 @@ class CourseView extends StatelessWidget {
                           Navigator.pushNamed(context, Routes.weather),
                     ),
                     MenuBarOptions(
-                      isCurrentPage: true,
                       icon: Icons.article,
                       name: 'Cursos',
-                      onPress: () => {},
+                      onPress: () =>
+                          Navigator.pushNamed(context, Routes.course),
                     ),
                     MenuBarOptions(
                       icon: Icons.lightbulb_outline,
@@ -94,9 +103,10 @@ class CourseView extends StatelessWidget {
                       onPress: () => Navigator.pushNamed(context, Routes.tip),
                     ),
                     MenuBarOptions(
+                      isCurrentPage: true,
                       icon: Icons.recycling_outlined,
                       name: 'Lixeira',
-                      onPress: () => Navigator.pushNamed(context, Routes.trash),
+                      onPress: () => {},
                     ),
                     MenuBarOptions(
                       icon: Icons.check,
