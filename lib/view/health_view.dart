@@ -78,13 +78,12 @@ class HealthView extends StatelessWidget {
                     MenuBarOptions(
                       icon: Icons.home,
                       name: 'Home',
-                      onPress: () =>
-                          Navigator.pushNamed(context, Routes.weather),
+                      onPress: () => Navigator.pushNamed(context, Routes.weather),
                     ),
                     MenuBarOptions(
                       isCurrentPage: true,
-                      icon: Icons.article,
-                      name: 'Cursos',
+                      icon: Icons.local_hospital_outlined,
+                      name: 'Saúde',
                       onPress: () => {},
                     ),
                     MenuBarOptions(
@@ -98,9 +97,9 @@ class HealthView extends StatelessWidget {
                       onPress: () => Navigator.pushNamed(context, Routes.trash),
                     ),
                     MenuBarOptions(
-                      icon: Icons.check,
-                      name: 'Fatos',
-                      onPress: () => Navigator.pushNamed(context, Routes.facts),
+                      icon: Icons.public_outlined,
+                      name: 'Redes',
+                      onPress: () => Navigator.pushNamed(context, Routes.network),
                     ),
                   ],
                 ),

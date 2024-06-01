@@ -1,3 +1,4 @@
+import 'package:ekocotam_clima/helpers/access_uri.dart';
 import 'package:ekocotam_clima/routes/app_routes.dart';
 import 'package:ekocotam_clima/theme/app_color.dart';
 import 'package:ekocotam_clima/widgets/content_button.dart';
@@ -7,11 +8,13 @@ import 'package:ekocotam_clima/widgets/menu_bar_options.dart';
 import 'package:flutter/material.dart';
 
 class CourseView extends StatelessWidget {
-  const CourseView({super.key});
+   const CourseView({super.key});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+
 
     return Layout(
       statusBarColor: AppColors.primaryColor,
@@ -48,20 +51,44 @@ class CourseView extends StatelessWidget {
                   child: Column(
                     children: [
                       ContentButton(
-                        onPress: () => {},
+                        onPress: () async {
+                          AccessUri accessUri = const AccessUri(
+                            uri: 'https://unccelearn.org/course/view.php?id=24&page=overview'
+                          );
+
+                         await accessUri.accessUri();
+                        },
                         text:
-                        'Saúde urbana e clima',
+                        'Curso online introdutório sobre mudança climática',
                       ),
                       ContentButton(
-                        onPress: () => {},
-                        text: 'Mudanças climáticas',
+                        onPress: () async {
+                          AccessUri accessUri = const AccessUri(
+                              uri: 'https://www.escolavirtual.gov.br/curso/346'
+                          );
+
+                          await accessUri.accessUri();
+                        },
+                        text: 'Mudança do Clima e Gestão de Risco Climático: Conceitos Fundamentais',
                       ),
                       ContentButton(
-                        onPress: () => {},
-                        text: 'Mudanças do clima e Gestão do Risco Climático',
+                        onPress: () async {
+                          AccessUri accessUri = const AccessUri(
+                              uri: 'https://cdp-ead.eadbox.com.br/courses/modulo-saude-urbana-e-clima'
+                          );
+
+                          await accessUri.accessUri();
+                        },
+                        text: 'Módulo Saúde Urbana e Clima',
                       ),
                       ContentButton(
-                        onPress: () => {},
+                        onPress: () async {
+                          AccessUri accessUri = const AccessUri(
+                              uri: 'https://www.escolavirtual.gov.br/curso/97'
+                          );
+
+                          await accessUri.accessUri();
+                        },
                         text: 'Impactos da Mudança do Clima para a Gestão Municipal',
                         hasBorderButton: true,
                       ),
